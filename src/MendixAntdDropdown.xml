@@ -80,7 +80,7 @@
                 <caption>Enable search</caption>
                 <description />
             </property>
-            <property key="filterAttribute" type="attribute" required="true" dataSource="data">
+            <property key="filterAttribute" type="attribute" dataSource="data">
                 <caption>Search attribute</caption>
                 <description>Search key attribute</description>
                 <attributeTypes>

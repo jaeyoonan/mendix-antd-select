@@ -45,7 +45,7 @@ export function MendixAntdDropdown({
             onChange={handleChange}
             disabled={disabled}
             filterOption={(input, option) => {
-                if (!input || !data.items || data.items.length === 0) {
+                if (!filterAttribute || !input || !data.items || data.items.length === 0) {
                     return true;
                 }
                 const item = data.items.find(i => i.id === option?.value);
