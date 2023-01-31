@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget
+    id="mendix.mendixantddropdown.MendixAntdDropdown"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+>
+    <name>Mendix Antd Dropdown</name>
+    <description>My widget description</description>
+    <icon />
+    <properties>
+        <propertyGroup caption="General">
+            <systemProperty key="Label" />
+            <property key="data" type="datasource" isList="true" required="true">
+                <caption>Data source</caption>
+                <description />
+            </property>
+            <property key="content" type="widgets" required="true" dataSource="data">
+                <caption>Item content</caption>
+                <description />
+            </property>
+
+            <property key="enableMultiSelect" type="boolean" defaultValue="false">
+                <caption>Enable Multi select</caption>
+                <description />
+            </property>
+            <property key="singeSelectAssocation" type="association" selectableObjects="data" required="false">
+                <caption>Single selet referece</caption>
+                <description />
+                <associationTypes>
+                    <associationType name="Reference" />
+                </associationTypes>
+            </property>
+            <property key="multiSelectAssociation" type="association" selectableObjects="data" required="false">
+                <caption>Multi select reference set</caption>
+                <description />
+                <associationTypes>
+                    <associationType name="ReferenceSet" />
+                </associationTypes>
+            </property>
+            <property key="disabled" type="boolean" defaultValue="false">
+                <caption>Disable</caption>
+                <description />
+            </property>
+
+            <property key="allowClear" type="boolean" defaultValue="false">
+                <caption>Allow clear</caption>
+                <description>Show clear buton</description>
+            </property>
+            <property key="autoClearSearchValue" type="boolean" defaultValue="true">
+                <caption>Auto clear search value</caption>
+                <description>Whether the current search will be clear on selecting an item.</description>
+            </property>
+
+            <property key="defaultActiveFirstOption" type="boolean" defaultValue="true">
+                <caption>Default active first option</caption>
+                <description>Whether active first option by default.</description>
+            </property>
+            <property key="defaultOpen" type="boolean" defaultValue="false">
+                <caption>Default open</caption>
+                <description>Initial open state of dropdown.</description>
+            </property>
+            <property key="virtual" type="boolean" defaultValue="false">
+                <caption>Enable Virtual</caption>
+                <description>Enable virtual scroll when set to false</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Event">
+            <property key="onClick" type="action">
+                <caption>On click</caption>
+                <description>Action to be performed when button is clicked</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Search">
+            <property key="showSearch" type="boolean" defaultValue="false">
+                <caption>Enable search</caption>
+                <description />
+            </property>
+            <property key="filterAttribute" type="attribute" required="true" dataSource="data">
+                <caption>Search attribute</caption>
+                <description>Search key attribute</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+            <property key="filterType" type="enumeration" defaultValue="contains">
+                <caption>Search type</caption>
+                <description />
+                <enumerationValues>
+                    <enumerationValue key="contains">Contains</enumerationValue>
+                    <enumerationValue key="startsWith">Starts with</enumerationValue>
+                </enumerationValues>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="UI">
+            <property key="bordered" type="boolean" defaultValue="true">
+                <caption>Bordered</caption>
+                <description>Whether has border</description>
+            </property>
+            <property key="listHeight" type="integer" defaultValue="256">
+                <caption>List height</caption>
+                <description>Config pop up height</description>
+            </property>
+
+            <property key="showArrow" type="boolean" defaultValue="true">
+                <caption>Show arrow</caption>
+                <description>Whether to show the drop-down arrow</description>
+            </property>
+            <property key="placeholder" type="string" defaultValue="" required="false">
+                <caption>Placeholder</caption>
+                <description>Placeholder of dropdown</description>
+            </property>
+            <property key="size" type="enumeration" defaultValue="middle">
+                <caption>Size</caption>
+                <description>Size of Select input</description>
+                <enumerationValues>
+                    <enumerationValue key="large">Large</enumerationValue>
+                    <enumerationValue key="middle">Middle</enumerationValue>
+                    <enumerationValue key="small">Small</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="placement" type="enumeration" defaultValue="bottomLeft">
+                <caption>Placement</caption>
+                <description>The position where the selection box pops up</description>
+                <enumerationValues>
+                    <enumerationValue key="bottomLeft">Bottom left</enumerationValue>
+                    <enumerationValue key="bottomRight">Bottom right</enumerationValue>
+                    <enumerationValue key="topLeft">Top left</enumerationValue>
+                    <enumerationValue key="topRight">Top right</enumerationValue>
+                </enumerationValues>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
