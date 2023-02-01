@@ -4,7 +4,7 @@
  * @author Mendix Widgets Framework Team
  */
 import { ComponentType } from "react";
-import { ActionValue, ListValue, ListAttributeValue, ListWidgetValue, ReferenceValue, ReferenceSetValue } from "mendix";
+import { ActionValue, EditableValue, ListValue, ListAttributeValue, ListWidgetValue, ReferenceValue, ReferenceSetValue } from "mendix";
 
 export type FilterTypeEnum = "contains" | "startsWith";
 
@@ -16,10 +16,12 @@ export interface MendixAntdDropdownContainerProps {
     name: string;
     tabIndex?: number;
     id: string;
+    contextObjectId: EditableValue<string>;
     data: ListValue;
     content: ListWidgetValue;
+    keyAttribute: ListAttributeValue<string>;
     enableMultiSelect: boolean;
-    singeSelectAssocation?: ReferenceValue;
+    singleSelectAssociation?: ReferenceValue;
     multiSelectAssociation?: ReferenceSetValue;
     disabled: boolean;
     allowClear: boolean;
@@ -27,9 +29,8 @@ export interface MendixAntdDropdownContainerProps {
     defaultActiveFirstOption: boolean;
     defaultOpen: boolean;
     virtual: boolean;
-    onClick?: ActionValue;
+    onChange?: ActionValue;
     showSearch: boolean;
-    filterAttribute: ListAttributeValue<string>;
     filterType: FilterTypeEnum;
     bordered: boolean;
     listHeight: number;
@@ -41,10 +42,12 @@ export interface MendixAntdDropdownContainerProps {
 
 export interface MendixAntdDropdownPreviewProps {
     readOnly: boolean;
+    contextObjectId: string;
     data: {} | { type: string } | null;
     content: { widgetCount: number; renderer: ComponentType<{ caption?: string }> };
+    keyAttribute: string;
     enableMultiSelect: boolean;
-    singeSelectAssocation: string;
+    singleSelectAssociation: string;
     multiSelectAssociation: string;
     disabled: boolean;
     allowClear: boolean;
@@ -52,9 +55,8 @@ export interface MendixAntdDropdownPreviewProps {
     defaultActiveFirstOption: boolean;
     defaultOpen: boolean;
     virtual: boolean;
-    onClick: {} | null;
+    onChange: {} | null;
     showSearch: boolean;
-    filterAttribute: string;
     filterType: FilterTypeEnum;
     bordered: boolean;
     listHeight: number | null;

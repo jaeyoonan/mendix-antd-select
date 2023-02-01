@@ -15,6 +15,13 @@
     <properties>
         <propertyGroup caption="General">
             <systemProperty key="Label" />
+            <property key="contextObjectId" type="attribute" required="true">
+                <caption>Context obj id attribute</caption>
+                <description>Context obj id attribute</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
             <property key="data" type="datasource" isList="true" required="true">
                 <caption>Data source</caption>
                 <description />
@@ -23,12 +30,19 @@
                 <caption>Item content</caption>
                 <description />
             </property>
+            <property key="keyAttribute" type="attribute" dataSource="data">
+                <caption>Key attribute</caption>
+                <description>Key attribute (Should be unique)</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
 
             <property key="enableMultiSelect" type="boolean" defaultValue="false">
                 <caption>Enable Multi select</caption>
                 <description />
             </property>
-            <property key="singeSelectAssocation" type="association" selectableObjects="data" required="false">
+            <property key="singleSelectAssociation" type="association" selectableObjects="data" required="false">
                 <caption>Single selet referece</caption>
                 <description />
                 <associationTypes>
@@ -70,8 +84,8 @@
             </property>
         </propertyGroup>
         <propertyGroup caption="Event">
-            <property key="onClick" type="action">
-                <caption>On click</caption>
+            <property key="onChange" type="action">
+                <caption>On Select</caption>
                 <description>Action to be performed when button is clicked</description>
             </property>
         </propertyGroup>
@@ -80,13 +94,7 @@
                 <caption>Enable search</caption>
                 <description />
             </property>
-            <property key="filterAttribute" type="attribute" dataSource="data">
-                <caption>Search attribute</caption>
-                <description>Search key attribute</description>
-                <attributeTypes>
-                    <attributeType name="String" />
-                </attributeTypes>
-            </property>
+
             <property key="filterType" type="enumeration" defaultValue="contains">
                 <caption>Search type</caption>
                 <description />

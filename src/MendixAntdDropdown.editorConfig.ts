@@ -112,9 +112,9 @@ export function getProperties(
     */
     const { enableMultiSelect, showSearch } = _values;
     enableMultiSelect
-        ? hidePropertyIn(defaultProperties, _values, "singeSelectAssocation")
+        ? hidePropertyIn(defaultProperties, _values, "singleSelectAssociation")
         : hidePropertyIn(defaultProperties, _values, "multiSelectAssociation");
-    if (!showSearch) hidePropertiesIn(defaultProperties, _values, ["filterType", "filterAttribute"]);
+    if (!showSearch) hidePropertiesIn(defaultProperties, _values, ["filterType"]);
     return defaultProperties;
 }
 
