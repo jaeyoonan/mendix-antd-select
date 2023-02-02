@@ -1,4 +1,4 @@
-import { ReactElement, createElement, useState, useEffect } from "react";
+import { ReactElement, createElement, useState, useEffect, useMemo } from "react";
 import { MendixAntdDropdownContainerProps } from "../../typings/MendixAntdDropdownProps";
 import { Select, Space } from "antd";
 import { ObjectItem, GUID } from "mendix";
@@ -28,13 +28,17 @@ export const Dropdown = ({
     onChange,
     contextObjectId
 }: MendixAntdDropdownContainerProps): ReactElement => {
-    const defaultValues: GUID[] | GUID = enableMultiSelect
-        ? multiSelectAssociation?.value?.map(i => i.id) || []
-        : singleSelectAssociation?.value?.id || [];
+    const defaultValues: GUID[] | GUID = useMemo(
+        () =>
+            enableMultiSelect
+                ? multiSelectAssociation?.value?.map(i => i.id) || []
+                : singleSelectAssociation?.value?.id || [],
+        [enableMultiSelect, multiSelectAssociation, singleSelectAssociation]
+    );
     const [selectedValues, setSelectedValues] = useState<GUID[] | GUID>(defaultValues);
     useEffect(() => {
         setSelectedValues(defaultValues);
-    }, [contextObjectId]);
+    }, [contextObjectId, enableMultiSelect ? multiSelectAssociation?.status : singleSelectAssociation?.status]);
     const handleChange = (values: GUID | GUID[]) => {
         if (enableMultiSelect) {
             const selectedItems = data.items?.filter(i => values.includes(i.id));

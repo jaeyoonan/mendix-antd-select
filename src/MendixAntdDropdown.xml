@@ -16,14 +16,14 @@
         <propertyGroup caption="General">
             <systemProperty key="Label" />
             <property key="contextObjectId" type="attribute" required="true">
-                <caption>Context obj id attribute</caption>
-                <description>Context obj id attribute</description>
+                <caption>Context Object Id</caption>
+                <description>Context object id attribute</description>
                 <attributeTypes>
                     <attributeType name="String" />
                 </attributeTypes>
             </property>
             <property key="data" type="datasource" isList="true" required="true">
-                <caption>Data source</caption>
+                <caption>Dropdown Data source</caption>
                 <description />
             </property>
             <property key="content" type="widgets" required="true" dataSource="data">
@@ -31,8 +31,8 @@
                 <description />
             </property>
             <property key="keyAttribute" type="attribute" dataSource="data">
-                <caption>Key attribute</caption>
-                <description>Key attribute (Should be unique)</description>
+                <caption>Item Key attribute</caption>
+                <description>Dropdown item key attribute</description>
                 <attributeTypes>
                     <attributeType name="String" />
                 </attributeTypes>
@@ -43,15 +43,15 @@
                 <description />
             </property>
             <property key="singleSelectAssociation" type="association" selectableObjects="data" required="false">
-                <caption>Single selet referece</caption>
-                <description />
+                <caption>Reference</caption>
+                <description>Single select association</description>
                 <associationTypes>
                     <associationType name="Reference" />
                 </associationTypes>
             </property>
             <property key="multiSelectAssociation" type="association" selectableObjects="data" required="false">
-                <caption>Multi select reference set</caption>
-                <description />
+                <caption>Reference Set</caption>
+                <description>Multi select association</description>
                 <associationTypes>
                     <associationType name="ReferenceSet" />
                 </associationTypes>
@@ -62,31 +62,31 @@
             </property>
 
             <property key="allowClear" type="boolean" defaultValue="false">
-                <caption>Allow clear</caption>
-                <description>Show clear buton</description>
+                <caption>Show clear</caption>
+                <description>Show clear button</description>
             </property>
             <property key="autoClearSearchValue" type="boolean" defaultValue="true">
                 <caption>Auto clear search value</caption>
-                <description>Whether the current search will be clear on selecting an item.</description>
+                <description>Whether the current search will be clear on selecting an item</description>
             </property>
 
             <property key="defaultActiveFirstOption" type="boolean" defaultValue="true">
                 <caption>Default active first option</caption>
-                <description>Whether active first option by default.</description>
+                <description>Whether active first option by default</description>
             </property>
             <property key="defaultOpen" type="boolean" defaultValue="false">
                 <caption>Default open</caption>
-                <description>Initial open state of dropdown.</description>
+                <description>Initial open state of dropdown</description>
             </property>
             <property key="virtual" type="boolean" defaultValue="false">
                 <caption>Enable Virtual</caption>
-                <description>Enable virtual scroll when set to false</description>
+                <description>Enable virtual scroll</description>
             </property>
         </propertyGroup>
         <propertyGroup caption="Event">
             <property key="onChange" type="action">
                 <caption>On Select</caption>
-                <description>Action to be performed when button is clicked</description>
+                <description>Action to be performed when item is selected</description>
             </property>
         </propertyGroup>
         <propertyGroup caption="Search">
@@ -116,7 +116,7 @@
 
             <property key="showArrow" type="boolean" defaultValue="true">
                 <caption>Show arrow</caption>
-                <description>Whether to show the drop-down arrow</description>
+                <description>Whether to show the dropdown arrow</description>
             </property>
             <property key="placeholder" type="string" defaultValue="" required="false">
                 <caption>Placeholder</caption>
