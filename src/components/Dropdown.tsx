@@ -33,7 +33,7 @@ export const Dropdown = ({
             enableMultiSelect
                 ? multiSelectAssociation?.value?.map(i => i.id) || []
                 : singleSelectAssociation?.value?.id || [],
-        [enableMultiSelect, multiSelectAssociation, singleSelectAssociation]
+        [enableMultiSelect, contextObjectId, multiSelectAssociation?.status, singleSelectAssociation?.status]
     );
     const [selectedValues, setSelectedValues] = useState<GUID[] | GUID>(defaultValues);
     useEffect(() => {
@@ -91,7 +91,7 @@ export const Dropdown = ({
         >
             {data.items?.map((item: ObjectItem) => {
                 const optionContent = content?.get(item);
-                const key = (keyAttribute.get(item).value || "").toLowerCase();
+                const key = keyAttribute.get(item).value || "";
                 return (
                     <Option value={item.id} label={item.id} optionLabel={key}>
                         <Space wrap>{optionContent}</Space>
