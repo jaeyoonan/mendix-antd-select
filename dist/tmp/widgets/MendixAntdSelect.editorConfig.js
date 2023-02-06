@@ -243,7 +243,11 @@ function getProperties(_values, defaultProperties /*, target: Platform*/) {
   */
   var enableMultiSelect = _values.enableMultiSelect,
     showSearch = _values.showSearch;
-  enableMultiSelect ? dist.hidePropertyIn(defaultProperties, _values, "singleSelectAssociation") : dist.hidePropertyIn(defaultProperties, _values, "multiSelectAssociation");
+  if (enableMultiSelect) {
+    dist.hidePropertyIn(defaultProperties, _values, "singleSelectAssociation");
+  } else {
+    dist.hidePropertyIn(defaultProperties, _values, "multiSelectAssociation");
+  }
   if (!showSearch) dist.hidePropertiesIn(defaultProperties, _values, ["filterType"]);
   return defaultProperties;
 }
