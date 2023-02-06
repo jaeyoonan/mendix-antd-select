@@ -1,6 +1,6 @@
 {
-  "name": "mendixantddropdown",
-  "widgetName": "MendixAntdDropdown",
+  "name": "mendixantdselect",
+  "widgetName": "MendixAntdSelect",
   "version": "1.0.0",
   "description": "My widget description",
   "copyright": "© Mendix Technology BV 2022. All rights reserved.",
