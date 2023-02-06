@@ -1,4 +1,4 @@
-## MendixAntdDropdown
+## Mendix Antd Select
 
 A Mendix Dropdown widget using Ant Design
 
