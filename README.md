@@ -1,6 +1,6 @@
 ## Mendix Antd Select
 
-A Mendix Dropdown widget using Ant Design
+A Mendix Select widget using Ant Design
 
 ![setting_1](/doc/setting_1.png)
 
@@ -23,7 +23,7 @@ A Mendix Dropdown widget using Ant Design
 
 ## Issues, suggestions and feature requests
 
-[link to GitHub issues](https://github.com/jaeyoonan/mendix-antd-dropdown/issues)
+[link to GitHub issues](https://github.com/jaeyoonan/mendix-antd-select/issues)
 
 ## Development and contribution
 
